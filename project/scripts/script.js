@@ -7,7 +7,7 @@ var Time = require('Time');
 var camera = Scene.root.find('Camera')
 var plane0 = Scene.root.find('planet.dae')
 // var outWindow = Scene.root.find('outWindow');
-// var transparentPlane = Scene.root.find('plane0');
+var transparentPlane = Scene.root.find('plane0');
 
 var camPos = Reactive.point(
 Reactive.val(camera.transform.x.lastValue),
@@ -41,18 +41,18 @@ D.watch('cam.y', camPosition.y)
 D.watch('cam.z', camPosition.z)
 D.watch('distance', distance);
 
-// Time.ms.interval(500).subscribe(
-//   function (elapsedTime) {
-//   	D.log(distance.lastValue);
-//     // if (camPosition.x.lastValue < 9)
-//       // transparentPlane.hidden = false;
-//   	// D.log(initialDistance.lastValue);
-//   	// planetObj.transform.scale = Reactive.scale(0, 0, 0);
-//   	// var calc = 5 * initialDistance.lastValue/distance.lastValue;
-//   	// planetObj.transform.scale = Reactive.scale(calc, calc, calc);
-//     // calc = 1 * initialDistance.lastValue/distance.lastValue;
-//     // window.transform.scale = Reactive.scale(calc, calc, calc);
-//   });
+Time.ms.interval(500).subscribe(
+  function (elapsedTime) {
+  	D.log(distance.lastValue);
+    // if (camPosition.x.lastValue < 9)
+      // transparentPlane.hidden = false;
+  	// D.log(initialDistance.lastValue);
+  	// planetObj.transform.scale = Reactive.scale(0, 0, 0);
+  	// var calc = 5 * initialDistance.lastValue/distance.lastValue;
+  	// planetObj.transform.scale = Reactive.scale(calc, calc, calc);
+    // calc = 1 * initialDistance.lastValue/distance.lastValue;
+    // window.transform.scale = Reactive.scale(calc, calc, calc);
+  });
 
 // outWindow.hidden = distance.gt(100);
 // outWindow.hidden = distance.lt(0);
