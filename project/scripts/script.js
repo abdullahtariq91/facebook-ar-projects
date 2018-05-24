@@ -7,7 +7,7 @@ var Time = require('Time');
 var camera = Scene.root.find('Camera')
 var plane0 = Scene.root.find('planet.dae')
 // var outWindow = Scene.root.find('outWindow');
-var transparentPlane = Scene.root.find('plane0');
+// var transparentPlane = Scene.root.find('plane0');
 
 var camPos = Reactive.point(
 Reactive.val(camera.transform.x.lastValue),
